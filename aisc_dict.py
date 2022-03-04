@@ -1,5 +1,5 @@
 import csv
-with open('ps_pack/AISC_Database_v14_1.csv','rU') as data:
+with open('./aisc-shapes/AISC_Database_v14_1.csv',newline='') as data:
 	aiscfile = csv.DictReader(data, dialect='excel')
 	aisc={}
 	num = 0
@@ -21,5 +21,7 @@ with open('ps_pack/AISC_Database_v14_1.csv','rU') as data:
 					aisc[i][j] = float(aisc[i][j])
 					break
 				except ValueError:
-					print 'Error on row ', num 
+					print ('Error on row ', num) 
 						
+if __name__ == "__main__":
+	print(aisc)
